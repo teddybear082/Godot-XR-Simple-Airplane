@@ -57,11 +57,12 @@ joystick_x_limit_max = 45.0
 joystick_y_limit_min = -45.0
 joystick_y_limit_max = 45.0
 joystick_x_steps = 0.0
-joystick_y_steps = 7.5
+joystick_y_steps = 0.0
 joystick_x_position = 0.0
 joystick_y_position = 0.0
 default_x_position = 0.0
 default_y_position = 0.0
+default_on_release = true
 
 [node name="JoystickBody" type="StaticBody" parent="JoystickOrigin/InteractableJoystick"]
 collision_layer = 4

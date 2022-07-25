@@ -48,7 +48,9 @@ func _physics_process(delta):
 		$Plane_Mesh.rotation.z = 0
 	else:
 		# Roll the body based on the turn input
-		$Plane_Mesh.rotation.z = lerp($Plane_Mesh.rotation.z, turn_input, level_speed * delta)
+	#	rotation.z = lerp(rotation.z, turn_input, level_speed * delta)
+	#	$Plane_Mesh.rotation.z = lerp($Plane_Mesh.rotation.z, turn_input, level_speed * delta)
+		$Plane_Mesh.rotation.z = lerp($Plane_Mesh.rotation.z, turn_input, delta)
 	#	$PlaneThrottle.rotation.z = lerp($PlaneThrottle.rotation.z, turn_input, level_speed * delta)
 	#	$Yoke.rotation.z = lerp($Yoke.rotation.z, turn_input, level_speed * delta)
 #		if player_is_seated:
@@ -77,7 +79,7 @@ func get_input(delta):
 	# Turn (roll/yaw) input
 	turn_input = 0
 	if forward_speed > 0.5:
-		turn_input = get_turn_input()
+		turn_input += get_turn_input()
 		
 	# Pitch (climb/dive) input
 	pitch_input = 0

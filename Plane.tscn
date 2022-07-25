@@ -323,7 +323,7 @@ layers = 524288
 mesh = SubResource( 18 )
 
 [node name="Info" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017395, 2.34681, -3.37054 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017395, 2.34681, -3.33605 )
 pixel_size = 0.003
 text = "TEST"
 
@@ -331,7 +331,7 @@ text = "TEST"
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.395881, 2.00086, -2.81282 )
 
 [node name="Yoke" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.99803, -3.05174 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.99803, -3.00997 )
 
 [connection signal="body_entered" from="PlaneEnterArea" to="." method="_on_PlaneEnterArea_body_entered"]
 [connection signal="body_entered" from="PlaneExitArea" to="." method="_on_PlaneExitArea_body_entered"]
