@@ -1,9 +1,9 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://sketchfab/sopwith-dolphin_stylized_plane/Material.material" type="Material" id=1]
-[ext_resource path="res://Plane.gd" type="Script" id=2]
-[ext_resource path="res://PlaneThrottle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Yoke.tscn" type="PackedScene" id=4]
+[ext_resource path="res://plane/Plane.gd" type="Script" id=2]
+[ext_resource path="res://plane/PlaneThrottle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://plane/Yoke.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/opengameart/airplane_prop.ogg" type="AudioStream" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
