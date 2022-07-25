@@ -19,6 +19,8 @@ export var level_speed = 3.0
 export var throttle_delta = 30
 # Acceleration/deceleration
 export var acceleration = 6.0
+# Speed propeller rotates
+export var propeller_speed = 30
 
 # Current speed
 var forward_speed = 0
@@ -36,7 +38,7 @@ func _ready():
 	pass#	DebugOverlay.stats.add_property(self, "grounded", "")
 #	DebugOverlay.stats.add_property(self, "forward_speed", "round")
 func _process(delta):
-	$Info.text = "Speed: " + str(forward_speed) + "Height:" + str(transform.origin.y)	
+	$Info.text = "Speed: " + str(int(forward_speed)) + "  Elevation: " + str(int(transform.origin.y))	
 	
 func _physics_process(delta):
 	get_input(delta)
@@ -45,12 +47,13 @@ func _physics_process(delta):
 	transform.basis = transform.basis.rotated(Vector3.UP, turn_input * turn_speed * delta)
 	# If on the ground, don't roll the body
 	if grounded:
-		$Plane_Mesh.rotation.z = 0
+	#	$Plane_Mesh.rotation.z = 0
+		rotation.z = 0
 	else:
 		# Roll the body based on the turn input
-	#	rotation.z = lerp(rotation.z, turn_input, level_speed * delta)
+		rotation.z = lerp(rotation.z, turn_input, level_speed * delta)
 	#	$Plane_Mesh.rotation.z = lerp($Plane_Mesh.rotation.z, turn_input, level_speed * delta)
-		$Plane_Mesh.rotation.z = lerp($Plane_Mesh.rotation.z, turn_input, delta)
+	#	$Plane_Mesh.rotation.z = lerp($Plane_Mesh.rotation.z, turn_input, delta)
 	#	$PlaneThrottle.rotation.z = lerp($PlaneThrottle.rotation.z, turn_input, level_speed * delta)
 	#	$Yoke.rotation.z = lerp($Yoke.rotation.z, turn_input, level_speed * delta)
 #		if player_is_seated:
@@ -80,13 +83,13 @@ func get_input(delta):
 	turn_input = 0
 	if forward_speed > 0.5:
 		turn_input += get_turn_input()
-		
+		$Plane_Mesh/ModelSpatial/Object_2/RootNode/Cylinder008/Propeller.rotation.x += propeller_speed*delta
 	# Pitch (climb/dive) input
 	pitch_input = 0
 	if not grounded:
-		pitch_input = get_pitch_input()
+		pitch_input += get_pitch_input()
 	if forward_speed >= min_flight_speed and get_pitch_input() > 0:
-		pitch_input = get_pitch_input()
+		pitch_input += get_pitch_input()
 
 func get_throttle_delta():
 	return $PlaneThrottle/SliderOrigin/InteractableSlider.slider_position / .4
@@ -112,16 +115,16 @@ func _on_PlaneExitArea_body_entered(body):
 		emit_signal("plane_exited", self)
 		
 func _on_PlaneThrottle_plane_throttle_moved(position):
-#	pass
-	print("Throttle position is: " + str(position)) # Replace with function body.
+	pass
+#	print("Throttle position is: " + str(position)) # Replace with function body.
 #	throttle_delta = position / .04
 
 func _on_Yoke_yoke_moved(x_angle, y_angle):
-#	pass # Replace with function body.
+	pass # Replace with function body.
 #	turn_input = x_angle
 #	pitch_input = y_angle
-	print("X angle is:")
-	print(str(x_angle))
-	print("Y angle is:")
-	print(str(y_angle))
+#	print("X angle is:")
+#	print(str(x_angle))
+#	print("Y angle is:")
+#	print(str(y_angle))
 	

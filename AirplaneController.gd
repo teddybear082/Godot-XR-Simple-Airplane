@@ -44,7 +44,7 @@ func _on_Plane_plane_exited(plane_node):
 		var playerbodynode = plane_node.get_node("Player/PlayerBody")
 		var exit_plane_camera = plane_node.get_node("ExitPlayerCamera")
 		plane_node.remove_child(arvrorigin)
-		add_child(arvrorigin)
+		get_parent().add_child(arvrorigin)
 		arvrorigin.global_transform = exit_plane_camera.global_transform
 		playerbodynode.enabled = true
 		ARVRServer.center_on_hmd(ARVRServer.RESET_BUT_KEEP_TILT,true)
