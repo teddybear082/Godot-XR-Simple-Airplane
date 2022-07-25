@@ -1,0 +1,211 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/wahooney.itch.io/white_grid.png" type="Texture" id=2]
+[ext_resource path="res://assets/kenney/naturePack_052.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Plane.tscn" type="PackedScene" id=4]
+[ext_resource path="res://AirplaneController.gd" type="Script" id=5]
+
+[sub_resource type="CubeMesh" id=4]
+resource_local_to_scene = true
+size = Vector3( 0.05, 0.05, 0.05 )
+subdivide_depth = 20
+
+[sub_resource type="CubeMesh" id=5]
+resource_local_to_scene = true
+size = Vector3( 0.05, 0.05, 0.05 )
+subdivide_depth = 20
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_color = Color( 0.376471, 0.160784, 0.00392157, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 900, 900 )
+
+[sub_resource type="MultiMesh" id=6]
+transform_format = 1
+instance_count = 128
+mesh = ExtResource( 3 )
+transform_array = PoolVector3Array( -1, 0, 0, 0, 1, 0, 0, 0, -1, -431.077, 0, -119.44, 0, 0, -1, 0, 1, 0, 1, 0, 0, 318.731, 0, 358.999, -1, 0, 0, 0, 1, 0, 0, 0, -1, 53.3304, 0, -333.885, 0, 0, -1, 0, 1, 0, 1, 0, 0, -140.415, 0, 341.539, 0, 0, -1, 0, 1, 0, 1, 0, 0, 239.852, 0, 173.093, -1, 0, 0, 0, 1, 0, 0, 0, -1, 46.0277, 0, -415.455, 0, 0, -1, 0, 1, 0, 1, 0, 0, 385.592, 0, -11.7945, 0, 0, -1, 0, 1, 0, 1, 0, 0, -71.2286, 0, 383.784, -1, 0, 0, 0, 1, 0, 0, 0, -1, -331.522, 0, -219.53, 0, 0, -1, 0, 1, 0, 1, 0, 0, -70.8572, 0, 326.582, 0, 0, -1, 0, 1, 0, 1, 0, 0, 291.879, 0, 113.145, -1, 0, 0, 0, 1, 0, 0, 0, -1, 254.806, 0, -335.324, 0, 0, -1, 0, 1, 0, 1, 0, 0, 36.3841, 0, 32.6357, -1, 0, 0, 0, 1, 0, 0, 0, -1, -249.968, 0, -78.1105, 0, 0, -1, 0, 1, 0, 1, 0, 0, 283.204, 0, -148.407, -1, 0, 0, 0, 1, 0, 0, 0, -1, -317.493, 0, -288.515, 0, 0, -1, 0, 1, 0, 1, 0, 0, 289.277, 0, 203.622, -1, 0, 0, 0, 1, 0, 0, 0, -1, -117.63, 0, -278.262, 0, 0, -1, 0, 1, 0, 1, 0, 0, 78.7424, 0, 409.878, 0, 0, -1, 0, 1, 0, 1, 0, 0, 217.02, 0, -3.08337, -1, 0, 0, 0, 1, 0, 0, 0, -1, -321.817, 0, 36.8101, -1, 0, 0, 0, 1, 0, 0, 0, -1, 87.1008, 0, -104.725, -1, 0, 0, 0, 1, 0, 0, 0, -1, -187.01, 0, -348.468, 0, 0, -1, 0, 1, 0, 1, 0, 0, 421.97, 0, 115.244, 0, 0, -1, 0, 1, 0, 1, 0, 0, -46.9, 0, 365.528, -1, 0, 0, 0, 1, 0, 0, 0, -1, 391.234, 0, -399.095, -1, 0, 0, 0, 1, 0, 0, 0, -1, -46.9276, 0, -0.903839, 0, 0, -1, 0, 1, 0, 1, 0, 0, 77.4369, 0, 188.37, -1, 0, 0, 0, 1, 0, 0, 0, -1, -155.746, 0, -147.403, -1, 0, 0, 0, 1, 0, 0, 0, -1, -356.352, 0, 156.54, 0, 0, -1, 0, 1, 0, 1, 0, 0, 80.1135, 0, 192.435, 0, 0, -1, 0, 1, 0, 1, 0, 0, 183.798, 0, 236.446, 0, 0, -1, 0, 1, 0, 1, 0, 0, 446.373, 0, -314.141, 0, 0, -1, 0, 1, 0, 1, 0, 0, -241.565, 0, 371.738, 0, 0, -1, 0, 1, 0, 1, 0, 0, 17.4612, 0, 375.141, 0, 0, -1, 0, 1, 0, 1, 0, 0, -232.09, 0, 334.404, -1, 0, 0, 0, 1, 0, 0, 0, -1, -220.922, 0, -143.131, 0, 0, -1, 0, 1, 0, 1, 0, 0, 437.388, 0, 161.216, -1, 0, 0, 0, 1, 0, 0, 0, -1, 44.5207, 0, -153.705, 0, 0, -1, 0, 1, 0, 1, 0, 0, 333.482, 0, 145.715, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0.198288, 0, -40.0816, -1, 0, 0, 0, 1, 0, 0, 0, -1, -293.866, 0, 207.699, -1, 0, 0, 0, 1, 0, 0, 0, -1, -179.107, 0, -433.455, -1, 0, 0, 0, 1, 0, 0, 0, -1, -185.278, 0, -67.069, 0, 0, -1, 0, 1, 0, 1, 0, 0, 202.126, 0, 384.195, -1, 0, 0, 0, 1, 0, 0, 0, -1, -12.8416, 0, -25.945, -1, 0, 0, 0, 1, 0, 0, 0, -1, 373.597, 0, -398.341, -1, 0, 0, 0, 1, 0, 0, 0, -1, -423.457, 0, 167.714, -1, 0, 0, 0, 1, 0, 0, 0, -1, -60.7618, 0, -129.057, -1, 0, 0, 0, 1, 0, 0, 0, -1, -258.038, 0, -128.225, 0, 0, -1, 0, 1, 0, 1, 0, 0, 276.276, 0, -95.9109, 0, 0, -1, 0, 1, 0, 1, 0, 0, 150.447, 0, 373.461, -1, 0, 0, 0, 1, 0, 0, 0, -1, -227.614, 0, -94.2933, -1, 0, 0, 0, 1, 0, 0, 0, -1, 324.969, 0, -347.895, 0, 0, -1, 0, 1, 0, 1, 0, 0, -133.188, 0, 259.983, 0, 0, -1, 0, 1, 0, 1, 0, 0, 403.614, 0, -185.491, -1, 0, 0, 0, 1, 0, 0, 0, -1, -217.519, 0, -316.828, -1, 0, 0, 0, 1, 0, 0, 0, -1, -294.22, 0, -402.982, -1, 0, 0, 0, 1, 0, 0, 0, -1, -196.273, 0, -341.625, -1, 0, 0, 0, 1, 0, 0, 0, -1, 32.252, 0, -316.871, -1, 0, 0, 0, 1, 0, 0, 0, -1, 15.931, 0, -206.286, -1, 0, 0, 0, 1, 0, 0, 0, -1, -383.946, 0, 183.445, 0, 0, -1, 0, 1, 0, 1, 0, 0, 262.629, 0, 187.43, -1, 0, 0, 0, 1, 0, 0, 0, -1, 136.335, 0, -280.072, 0, 0, -1, 0, 1, 0, 1, 0, 0, 444.413, 0, 340.74, 0, 0, -1, 0, 1, 0, 1, 0, 0, -267.535, 0, 441.873, -1, 0, 0, 0, 1, 0, 0, 0, -1, -383.962, 0, -90.5901, -1, 0, 0, 0, 1, 0, 0, 0, -1, 116.624, 0, -168.917, 0, 0, -1, 0, 1, 0, 1, 0, 0, 252.749, 0, 127.936, 0, 0, -1, 0, 1, 0, 1, 0, 0, 341.747, 0, 212.384, -1, 0, 0, 0, 1, 0, 0, 0, -1, -128.815, 0, 74.4489, 0, 0, -1, 0, 1, 0, 1, 0, 0, 165.531, 0, 322.674, -1, 0, 0, 0, 1, 0, 0, 0, -1, 322.502, 0, -344.576, -1, 0, 0, 0, 1, 0, 0, 0, -1, -105.156, 0, -307.74, -1, 0, 0, 0, 1, 0, 0, 0, -1, -165.906, 0, 72.5209, -1, 0, 0, 0, 1, 0, 0, 0, -1, 137.494, 0, -144.271, 0, 0, -1, 0, 1, 0, 1, 0, 0, 150.238, 0, 245.326, -1, 0, 0, 0, 1, 0, 0, 0, -1, 200.345, 0, -290.43, -1, 0, 0, 0, 1, 0, 0, 0, -1, -364.067, 0, -100.542, -1, 0, 0, 0, 1, 0, 0, 0, -1, -320.35, 0, -68.3268, 0, 0, -1, 0, 1, 0, 1, 0, 0, 8.0461, 0, 192.031, 0, 0, -1, 0, 1, 0, 1, 0, 0, 81.5074, 0, -13.8643, 0, 0, -1, 0, 1, 0, 1, 0, 0, 6.0685, 0, 87.4199, 0, 0, -1, 0, 1, 0, 1, 0, 0, 2.05617, 0, 99.6334, -1, 0, 0, 0, 1, 0, 0, 0, -1, -118.856, 0, -87.2862, -1, 0, 0, 0, 1, 0, 0, 0, -1, -82.201, 0, -410.952, -1, 0, 0, 0, 1, 0, 0, 0, -1, -345.509, 0, -274.683, 0, 0, -1, 0, 1, 0, 1, 0, 0, 242.585, 0, 342.892, 0, 0, -1, 0, 1, 0, 1, 0, 0, 339.223, 0, -170.324, -1, 0, 0, 0, 1, 0, 0, 0, -1, -445.972, 0, -366.049, 0, 0, -1, 0, 1, 0, 1, 0, 0, 72.5982, 0, 230.094, -1, 0, 0, 0, 1, 0, 0, 0, -1, -286.324, 0, -435.178, -1, 0, 0, 0, 1, 0, 0, 0, -1, -363.373, 0, 256.72, 0, 0, -1, 0, 1, 0, 1, 0, 0, 318.296, 0, -125.786, -1, 0, 0, 0, 1, 0, 0, 0, -1, -331.228, 0, -444.288, -1, 0, 0, 0, 1, 0, 0, 0, -1, -405.169, 0, -203.02, 0, 0, -1, 0, 1, 0, 1, 0, 0, 360.587, 0, -252.841, -1, 0, 0, 0, 1, 0, 0, 0, -1, -88.4434, 0, -83.5363, -1, 0, 0, 0, 1, 0, 0, 0, -1, -63.9506, 0, -1.17841, 0, 0, -1, 0, 1, 0, 1, 0, 0, -166.536, 0, 307.201, 0, 0, -1, 0, 1, 0, 1, 0, 0, -12.6487, 0, 265.766, 0, 0, -1, 0, 1, 0, 1, 0, 0, 325.68, 0, 416.138, -1, 0, 0, 0, 1, 0, 0, 0, -1, -439.075, 0, -53.3662, -1, 0, 0, 0, 1, 0, 0, 0, -1, -404.369, 0, -160.825, -1, 0, 0, 0, 1, 0, 0, 0, -1, -408.682, 0, 144.687, 0, 0, -1, 0, 1, 0, 1, 0, 0, 277.826, 0, 109.766, -1, 0, 0, 0, 1, 0, 0, 0, -1, -434.35, 0, 171.396, 0, 0, -1, 0, 1, 0, 1, 0, 0, 194.146, 0, -0.613312, 0, 0, -1, 0, 1, 0, 1, 0, 0, -265.885, 0, 360.114, 0, 0, -1, 0, 1, 0, 1, 0, 0, 405.827, 0, -38.559, 0, 0, -1, 0, 1, 0, 1, 0, 0, 387.436, 0, 89.1141, -1, 0, 0, 0, 1, 0, 0, 0, -1, -314.549, 0, -285.037, 0, 0, -1, 0, 1, 0, 1, 0, 0, 2.49435, 0, 269.056, -1, 0, 0, 0, 1, 0, 0, 0, -1, -249.682, 0, 135.994, 0, 0, -1, 0, 1, 0, 1, 0, 0, 434.862, 0, -397.672, -1, 0, 0, 0, 1, 0, 0, 0, -1, -402.903, 0, 402.567, 0, 0, -1, 0, 1, 0, 1, 0, 0, -90.0059, 0, 222.359, -1, 0, 0, 0, 1, 0, 0, 0, -1, 37.2195, 0, -209.168, -1, 0, 0, 0, 1, 0, 0, 0, -1, -275.51, 0, -247.928, 0, 0, -1, 0, 1, 0, 1, 0, 0, 303.108, 0, 24.9429, -1, 0, 0, 0, 1, 0, 0, 0, -1, -250.282, 0, -127.29, -1, 0, 0, 0, 1, 0, 0, 0, -1, -412.034, 0, -67.7787, 0, 0, -1, 0, 1, 0, 1, 0, 0, -80.9126, 0, 355.555, 0, 0, -1, 0, 1, 0, 1, 0, 0, 63.5208, 0, -62.9408, 0, 0, -1, 0, 1, 0, 1, 0, 0, -18.2015, 0, 215.897, -1, 0, 0, 0, 1, 0, 0, 0, -1, -179.427, 0, 167.011, -1, 0, 0, 0, 1, 0, 0, 0, -1, -28.7624, 0, -447.049, -1, 0, 0, 0, 1, 0, 0, 0, -1, -0.893814, 0, -150.002 )
+
+[sub_resource type="PlaneMesh" id=7]
+size = Vector2( 15, 150 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[node name="Demo" type="Spatial"]
+
+[node name="AirplaneController" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Plane" parent="AirplaneController" instance=ExtResource( 4 )]
+transform = Transform( 0.730138, 0, -0.683299, 0, 1, 0, 0.683299, 0, 0.730138, -117.556, 1.5, 112.65 )
+throttle_delta = 0
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="BoneRoot" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="1"]
+transform = Transform( 1, -2.50192e-40, 1.51496e-08, 1.51445e-08, -0.025905, -0.999665, 3.92449e-10, 0.999664, -0.025905, 7.2293e-21, 0.000360775, -0.0235019 )
+
+[node name="BoneThumbMetacarpal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="2"]
+transform = Transform( 0.858407, -0.510964, 0.0453197, 0.393499, 0.599231, -0.697195, 0.329085, 0.61631, 0.715447, 1.44628e-08, -0.000522292, 0.0105753 )
+
+[node name="BoneThumbProximal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="3"]
+transform = Transform( 0.653204, -0.575626, 0.491913, 0.637544, 0.0676378, -0.767439, 0.408486, 0.814911, 0.411168, -0.0307404, 0.0355286, 0.0476535 )
+
+[node name="BoneThumbDistal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="4"]
+transform = Transform( 0.641228, -0.57023, 0.513483, 0.627228, 0.00400403, -0.778826, 0.442053, 0.821475, 0.360232, -0.0537614, 0.0382334, 0.0802443 )
+
+[node name="BoneIndexMetacarpal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="5"]
+transform = Transform( 0.999276, 0.0112952, -0.0363351, -0.0380494, 0.303049, -0.952215, 0.000255822, 0.952908, 0.303259, -1.17901e-10, -0.000522291, 0.0105752 )
+
+[node name="BoneIndexProximal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="6"]
+transform = Transform( 0.993643, 0.108167, -0.0311928, -0.0593467, 0.26786, -0.961629, -0.0956611, 0.957367, 0.272577, 0.00100868, 0.0265468, 0.0956918 )
+
+[node name="BoneIndexMiddle" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="7"]
+transform = Transform( 0.984049, -0.177367, -0.0137285, -0.020051, -0.0339034, -0.999224, 0.176764, 0.983561, -0.0369191, 0.00468414, 0.0356487, 0.128223 )
+
+[node name="BoneIndexDistal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="8"]
+transform = Transform( 0.927501, -0.373365, 0.0184361, -0.00490146, -0.0614605, -0.998098, 0.373788, 0.925646, -0.0588348, -0.000317366, 0.0346926, 0.155956 )
+
+[node name="BoneMiddleMetacarpal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="9"]
+transform = Transform( 0.996581, 0.0825, 0.00438378, -0.00516692, 0.115197, -0.993329, -0.0824547, 0.98991, 0.11523, -2.08602e-09, -0.000522293, 0.0105753 )
+
+[node name="BoneMiddleProximal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="10"]
+transform = Transform( 0.999226, 0.0393314, 0.00018736, 0.00211799, -0.0490505, -0.998794, -0.0392748, 0.998021, -0.0490958, 0.00712923, 0.00943249, 0.0961184 )
+
+[node name="BoneMiddleMiddle" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="11"]
+transform = Transform( 0.90112, -0.432901, 0.0240869, -0.0456923, -0.150064, -0.98762, 0.431156, 0.888863, -0.155006, 0.00830444, 0.00796703, 0.125936 )
+
+[node name="BoneMiddleDistal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="12"]
+transform = Transform( 0.723534, -0.690285, 0.00243967, -0.172605, -0.184338, -0.967588, 0.668361, 0.699661, -0.252521, -0.00511784, 0.0033142, 0.153496 )
+
+[node name="BoneRingMetacarpal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="13"]
+transform = Transform( 0.999009, 0.0444944, -0.000672045, 0.00788389, -0.191836, -0.981395, -0.0437955, 0.980418, -0.191997, -3.14338e-09, -0.000522293, 0.0105753 )
+
+[node name="BoneRingProximal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="14"]
+transform = Transform( 0.993169, 0.116494, -0.00670008, 0.0117931, -0.157336, -0.987475, -0.116089, 0.98065, -0.157635, 0.00351231, -0.015666, 0.0879703 )
+
+[node name="BoneRingMiddle" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="15"]
+transform = Transform( 0.865561, -0.498619, -0.0467217, -0.166109, -0.19783, -0.96606, 0.472453, 0.843944, -0.254059, 0.00682499, -0.0201401, 0.115857 )
+
+[node name="BoneRingDistal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="16"]
+transform = Transform( 0.475025, -0.861852, -0.17766, -0.499622, -0.0979557, -0.860687, 0.724381, 0.497611, -0.477131, -0.00622966, -0.0253195, 0.137952 )
+
+[node name="BonePinkyMetacarpal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="17"]
+transform = Transform( 0.999813, 0.0166299, 0.00978245, 0.016408, -0.466135, -0.884562, -0.0101502, 0.884557, -0.466321, 3.16697e-10, -0.000522297, 0.0105754 )
+
+[node name="BonePinkyProximal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="18"]
+transform = Transform( 0.98895, -0.147942, -0.00946361, -0.0522291, -0.287969, -0.956215, 0.138739, 0.946143, -0.292514, 0.00128954, -0.0366702, 0.0791712 )
+
+[node name="BonePinkyMiddle" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="19"]
+transform = Transform( 0.740024, -0.658406, -0.137349, -0.308624, -0.150972, -0.939127, 0.597591, 0.737366, -0.314923, -0.00162087, -0.0423355, 0.0977853 )
+
+[node name="BonePinkyDistal" parent="Player/LeftHandController/LeftPhysicsHand/LeftHand/Armature_Left/Skeleton" index="20"]
+transform = Transform( 0.463311, -0.822464, -0.329992, -0.51281, 0.0548708, -0.856747, 0.722751, 0.566164, -0.396346, -0.0115324, -0.0446074, 0.108884 )
+
+[node name="Grapple_Target" parent="Player/LeftHandController/Function_Grapple_movement" index="1"]
+mesh = SubResource( 4 )
+
+[node name="BoneRoot" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="1"]
+transform = Transform( 1, -2.50192e-40, 1.51496e-08, 1.51445e-08, -0.025905, -0.999665, 3.92449e-10, 0.999664, -0.025905, 7.2293e-21, 0.000360775, -0.0235019 )
+
+[node name="BoneThumbMetacarpal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="2"]
+transform = Transform( 0.858407, -0.510964, 0.0453197, 0.393499, 0.599231, -0.697195, 0.329085, 0.61631, 0.715447, 1.44628e-08, -0.000522292, 0.0105753 )
+
+[node name="BoneThumbProximal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="3"]
+transform = Transform( 0.653204, -0.575626, 0.491913, 0.637544, 0.0676378, -0.767439, 0.408486, 0.814911, 0.411168, -0.0307404, 0.0355286, 0.0476535 )
+
+[node name="BoneThumbDistal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="4"]
+transform = Transform( 0.641228, -0.57023, 0.513483, 0.627228, 0.00400403, -0.778826, 0.442053, 0.821475, 0.360232, -0.0537614, 0.0382334, 0.0802443 )
+
+[node name="BoneIndexMetacarpal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="5"]
+transform = Transform( 0.999276, 0.0112952, -0.0363351, -0.0380494, 0.303049, -0.952215, 0.000255822, 0.952908, 0.303259, -1.17901e-10, -0.000522291, 0.0105752 )
+
+[node name="BoneIndexProximal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="6"]
+transform = Transform( 0.993643, 0.108167, -0.0311928, -0.0593467, 0.26786, -0.961629, -0.0956611, 0.957367, 0.272577, 0.00100868, 0.0265468, 0.0956918 )
+
+[node name="BoneIndexMiddle" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="7"]
+transform = Transform( 0.984049, -0.177367, -0.0137285, -0.020051, -0.0339034, -0.999224, 0.176764, 0.983561, -0.0369191, 0.00468414, 0.0356487, 0.128223 )
+
+[node name="BoneIndexDistal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="8"]
+transform = Transform( 0.927501, -0.373365, 0.0184361, -0.00490146, -0.0614605, -0.998098, 0.373788, 0.925646, -0.0588348, -0.000317366, 0.0346926, 0.155956 )
+
+[node name="BoneMiddleMetacarpal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="9"]
+transform = Transform( 0.996581, 0.0825, 0.00438378, -0.00516692, 0.115197, -0.993329, -0.0824547, 0.98991, 0.11523, -2.08602e-09, -0.000522293, 0.0105753 )
+
+[node name="BoneMiddleProximal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="10"]
+transform = Transform( 0.999226, 0.0393314, 0.00018736, 0.00211799, -0.0490505, -0.998794, -0.0392748, 0.998021, -0.0490958, 0.00712923, 0.00943249, 0.0961184 )
+
+[node name="BoneMiddleMiddle" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="11"]
+transform = Transform( 0.90112, -0.432901, 0.0240869, -0.0456923, -0.150064, -0.98762, 0.431156, 0.888863, -0.155006, 0.00830444, 0.00796703, 0.125936 )
+
+[node name="BoneMiddleDistal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="12"]
+transform = Transform( 0.723534, -0.690285, 0.00243967, -0.172605, -0.184338, -0.967588, 0.668361, 0.699661, -0.252521, -0.00511784, 0.0033142, 0.153496 )
+
+[node name="BoneRingMetacarpal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="13"]
+transform = Transform( 0.999009, 0.0444944, -0.000672045, 0.00788389, -0.191836, -0.981395, -0.0437955, 0.980418, -0.191997, -3.14338e-09, -0.000522293, 0.0105753 )
+
+[node name="BoneRingProximal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="14"]
+transform = Transform( 0.993169, 0.116494, -0.00670008, 0.0117931, -0.157336, -0.987475, -0.116089, 0.98065, -0.157635, 0.00351231, -0.015666, 0.0879703 )
+
+[node name="BoneRingMiddle" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="15"]
+transform = Transform( 0.865561, -0.498619, -0.0467217, -0.166109, -0.19783, -0.96606, 0.472453, 0.843944, -0.254059, 0.00682499, -0.0201401, 0.115857 )
+
+[node name="BoneRingDistal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="16"]
+transform = Transform( 0.475025, -0.861852, -0.17766, -0.499622, -0.0979557, -0.860687, 0.724381, 0.497611, -0.477131, -0.00622966, -0.0253195, 0.137952 )
+
+[node name="BonePinkyMetacarpal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="17"]
+transform = Transform( 0.999813, 0.0166299, 0.00978245, 0.016408, -0.466135, -0.884562, -0.0101502, 0.884557, -0.466321, 3.16697e-10, -0.000522297, 0.0105754 )
+
+[node name="BonePinkyProximal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="18"]
+transform = Transform( 0.98895, -0.147942, -0.00946361, -0.0522291, -0.287969, -0.956215, 0.138739, 0.946143, -0.292514, 0.00128954, -0.0366702, 0.0791712 )
+
+[node name="BonePinkyMiddle" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="19"]
+transform = Transform( 0.740024, -0.658406, -0.137349, -0.308624, -0.150972, -0.939127, 0.597591, 0.737366, -0.314923, -0.00162087, -0.0423355, 0.0977853 )
+
+[node name="BonePinkyDistal" parent="Player/RightHandController/RightPhysicsHand/RightHand/Armature_Left/Skeleton" index="20"]
+transform = Transform( 0.463311, -0.822464, -0.329992, -0.51281, 0.0548708, -0.856747, 0.722751, 0.566164, -0.396346, -0.0115324, -0.0446074, 0.108884 )
+
+[node name="Grapple_Target" parent="Player/RightHandController/Function_Grapple_movement" index="1"]
+mesh = SubResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+use_collision = true
+width = 1000.0
+height = 1.0
+depth = 1000.0
+material = SubResource( 1 )
+
+[node name="MeshforMultiMesh" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+
+[node name="MultiMeshInstance" type="MultiMeshInstance" parent="."]
+multimesh = SubResource( 6 )
+
+[node name="naturePack_052" type="MeshInstance" parent="MultiMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.703, 0.607465, -35.8901 )
+mesh = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.688772, 0, -0.724978, 0, 1, 0, 0.724978, 0, 0.688772, -66.684, 0.51, 61.799 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[connection signal="plane_entered" from="AirplaneController/Plane" to="AirplaneController" method="_on_Plane_plane_entered"]
+[connection signal="plane_exited" from="AirplaneController/Plane" to="AirplaneController" method="_on_Plane_plane_exited"]
+
+[editable path="Player"]
+[editable path="Player/LeftHandController/LeftPhysicsHand"]
+[editable path="Player/LeftHandController/LeftPhysicsHand/LeftHand"]
+[editable path="Player/LeftHandController/Function_Grapple_movement"]
+[editable path="Player/LeftHandController/Function_BulletTime_movement"]
+[editable path="Player/RightHandController/RightPhysicsHand"]
+[editable path="Player/RightHandController/RightPhysicsHand/RightHand"]
+[editable path="Player/RightHandController/Function_Grapple_movement"]
+[editable path="Player/RightHandController/Function_Max_Payne_Dive_movement"]

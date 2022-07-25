@@ -1,0 +1,11 @@
+Model Information:
+* title:	The Flying Circus - SPAD XIII
+* source:	https://sketchfab.com/3d-models/the-flying-circus-spad-xiii-1b2fbdc74c0c41529ddfcba24af7cdc2
+* author:	Lander Van Regenmortel (https://sketchfab.com/BrusselseWafel)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The Flying Circus - SPAD XIII" (https://sketchfab.com/3d-models/the-flying-circus-spad-xiii-1b2fbdc74c0c41529ddfcba24af7cdc2) by Lander Van Regenmortel (https://sketchfab.com/BrusselseWafel) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
