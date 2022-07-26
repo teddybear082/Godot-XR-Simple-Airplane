@@ -8,10 +8,11 @@ extends Node
 
 var plane_already_entered = false
 var plane_already_exited = false
+var original_transform_basis = null
 
 # Called when the node enters the scene tree for the first time.
-#func _ready():
-	
+func _ready():
+	original_transform_basis = get_parent().get_node("Player").transform.basis
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,7 +46,8 @@ func _on_Plane_plane_exited(plane_node):
 		var exit_plane_camera = plane_node.get_node("ExitPlayerCamera")
 		plane_node.remove_child(arvrorigin)
 		get_parent().add_child(arvrorigin)
-		arvrorigin.global_transform = exit_plane_camera.global_transform
+		arvrorigin.global_transform.origin = exit_plane_camera.global_transform.origin
+		arvrorigin.transform.basis = original_transform_basis
 		playerbodynode.enabled = true
 		ARVRServer.center_on_hmd(ARVRServer.RESET_BUT_KEEP_TILT,true)
 		enable_player_controls(true)
