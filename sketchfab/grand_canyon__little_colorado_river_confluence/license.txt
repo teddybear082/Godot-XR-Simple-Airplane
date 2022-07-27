@@ -1,0 +1,11 @@
+Model Information:
+* title:	Grand Canyon & Little Colorado River Confluence
+* source:	https://sketchfab.com/3d-models/grand-canyon-little-colorado-river-confluence-87a2367f943a497983e1395da52d660a
+* author:	Nate Loper   🗺️ ⛏🏺 (https://sketchfab.com/arizonaguide)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Grand Canyon & Little Colorado River Confluence" (https://sketchfab.com/3d-models/grand-canyon-little-colorado-river-confluence-87a2367f943a497983e1395da52d660a) by Nate Loper   🗺️ ⛏🏺 (https://sketchfab.com/arizonaguide) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
